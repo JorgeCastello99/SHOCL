@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fronterminal</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+</head>
+
+<body>
+
+  <div class="header">
+    <img src="img/js-format.svg" alt="JS" />
+    <span>Bases :: Perfeccionamiento de Programación</span>
+  </div>
+
+  <div class="content">
+
+    <img style="z-index: 1" src="img/msg_console.png" alt="¡Todo lo que muestres por console.log() aparece aquí!" />
+    <div id="terminal">
+      <div id="terminalHeader">
+        <span class="buttons"></span>
+        <span class="buttons"></span>
+        <span class="buttons"></span>
+      </div>
+      <ul id="lines"></ul>
+    </div>
+    <p>Otra opción es presionar F12 e ir a la pestaña de consola</p>
+
+  </div>
+
+  <div class="footer">
+    <img src="./img/bannerLogos.webp" alt="Logotipos" style="width: 100vw;" ; />
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      var oldLog = console.log;
+      console.log = function (message) {
+        let newLine = document.createElement('LI');
+        const lineMessage = document.createTextNode(message);
+        newLine.appendChild(lineMessage);
+        document.getElementById('lines').appendChild(newLine);
+        oldLog.apply(console, arguments);
+      };
+    })();
+  </script>
+  <script type="text/javascript" src="./js/main.js" async></script>
+
+</body>
+
+</html>
