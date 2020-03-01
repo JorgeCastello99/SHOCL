@@ -2,8 +2,8 @@ document.getElementById('p0').innerHTML = '¿Quitó el texto de ejemplo?';
 
 // Esto bloquea la ejecución
 for (let espera = 0; espera < 3; espera++) {
-  sleep(1000);
-  console.log(`Han pasado ${espera} segundos`);
+   sleep(1000);
+   console.log(`Han pasado ${espera} segundos`);
 }
 
 // Esto no bloquea, pero se ejecutará despés de 5 segundos (más lo que tarde el otro)
@@ -11,7 +11,6 @@ setTimeout(() => {
    console.log('Esto se ejecutará después de 3 segundos');
    document.getElementById('p2').innerHTML = 'Para cargar esto hizo falta JS';
 }, 5000);
-
 
 function sleep(milliseconds) {
    const start = new Date().getTime();

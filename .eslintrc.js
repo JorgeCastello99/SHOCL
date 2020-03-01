@@ -16,6 +16,7 @@ module.exports = {
    rules: {
       // Prettier
       'prettier/prettier': 'error',
+
       // Style config
       indent: ['error', 3], // Fuerza a 3 la identación
       'array-bracket-spacing': ['error', 'never', { singleValue: false }],
@@ -29,7 +30,7 @@ module.exports = {
       'comma-spacing': ['error', { before: false, after: true }],
       'comma-dangle': ['error', 'always-multiline'],
       'eol-last': 'warn',
-      'space-before-function-paren': '',
+      'space-before-function-paren': ['error', 'never'],
 
       // Best practices
       'init-declarations': ['error', 'always'], // Las variables deben ser inicializadas antes
