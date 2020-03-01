@@ -2,6 +2,10 @@
 
 Para resolver estos ejercicios será necesario algo donde escribir, algo con lo que escribir pero más importante, algo que escribir. Es MUY importante apuntar absolutamente todo lo que pensemos y más aún, todo lo que hagamos.
 
+## Los cubos de agua
+
+En un experimento muy loco se me ha ocurrido intercambiar el contenido de dos cubos. Uno de ellos tiene agua de color rojo y, el otro, agua de color azul. ¿Cómo lo harías?
+
 ## ¡Sumando voy!
 
 Ahora que sabes lo que es un algoritmo, ¿te atreves a hacer el algoritmo con el que te enseñaron a sumar enteros?
