@@ -4,11 +4,10 @@
  * sino que se tiene que intercambiar el valor. Puedes hacer uso de los elementos adicionales
  * que quieras.
  *
- * Al
  */
 
-let box1 = 'red';
-let box2 = 'blue';
+const box1 = 'red';
+const box2 = 'blue';
 
 // Introduce aquí tu código
 
