@@ -6,8 +6,8 @@
  *
  */
 
-const box1 = 'red';
-const box2 = 'blue';
+let box1 = 'red';
+let box2 = 'blue';
 
 // Introduce aquí tu código
 
