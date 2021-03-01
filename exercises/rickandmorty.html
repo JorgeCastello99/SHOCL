@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Rick y Morty molan un montón :-)</title>
+      <script defer>
+         // Esta función ya está en desuso, pero nos sirve para el ejemplo ;-)
+         function httpGet(url) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open('GET', url, false);
+            xmlHttp.send(null);
+            return xmlHttp.responseText;
+         }
+         const jsonAPIContent = JSON.parse(httpGet('https://rickandmortyapi.com/api/character'));
+
+         // Tu código empìeza aquí
+         //console.log(jsonAPIContent);
+      </script>
+   </head>
+   <body>
+      <div id="contenedorPersonajes"></div>
+   </body>
+</html>
