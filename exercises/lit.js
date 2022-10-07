@@ -160,13 +160,13 @@ const WORDS = [
    'oren',
    'ores',
    'orno',
-   'orzo',
+   'orzo'
 ]; // eslint-disable-line no-use-before-define
 const WORD_SIZE = 4;
 const colors = require('colors');
 const readline = require('readline').createInterface({
    input: process.stdin,
-   output: process.stdout
+   output: process.stdout,
 });
 
 // Tu código empieza aquí
@@ -213,6 +213,13 @@ function printWord(greenIndex, yellowIndex, word) {
    return letra;
 }
 
+function checkWord(word, randomWord) {
+   if (word === randomWord) {
+      return true;
+   }
+   return false;
+}
+
 const randomWord = generateRandomWord();
 
 console.log(randomWord);
@@ -222,6 +229,10 @@ const recursiveAsyncReadLine = function() {
       const [greenIndex, yellowIndex] = compareLetters(word, randomWord);
       const wordColoured = printWord(greenIndex, yellowIndex, word);
       console.log(wordColoured);
+      if (checkWord()) {
+         console.log('ENHORABUENA, ACERTASTE LA PALABRA');
+         return readline.close();
+      }
       intentos++;
       if (intentos == 6) return readline.close();
       console.log(`Has introducido ${word}`);
