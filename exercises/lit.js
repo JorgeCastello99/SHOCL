@@ -163,6 +163,7 @@ const WORDS = [
    'orzo',
 ]; // eslint-disable-line no-use-before-define
 const WORD_SIZE = 4;
+const ATTEMPS = 6;
 const colors = require('colors');
 const readline = require('readline').createInterface({
    input: process.stdin,
