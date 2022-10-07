@@ -160,24 +160,24 @@ const WORDS = [
    'oren',
    'ores',
    'orno',
-   'orzo',
+   'orzo'
 ]; // eslint-disable-line no-use-before-define
 const WORD_SIZE = 4;
 const colors = require('colors');
 const readline = require('readline').createInterface({
    input: process.stdin,
-   output: process.stdout,
+   output: process.stdout
 });
 
 // Tu código empieza aquí
-let wordAtempt = 6;
-readline.question('Palabra: ', word => {
-   if (wordAtempt > 0) {
-      console.log(`La palabra ingresada es ${word.green}!`);
-      wordAtempt--;
-   } else {
-      console.log('has alcanzado el limite de intentos');
-   }
+const wordAtempt = 6;
+for (let i = 0; i < wordAtempt.length; i++) {
+   readline.question('Palabra: ', word => {});
 
-   readline.close();
-});
+   if (i > 0) {
+      console.log('');
+   } else {
+      console.log('No tienes más intentos');
+   }
+}
+readline.close();
