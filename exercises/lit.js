@@ -170,7 +170,14 @@ const readline = require('readline').createInterface({
 });
 
 // Tu código empieza aquí
+
 readline.question('Palabra: ', word => {
+   let wordAtempt = 6;
+
+   do {
+      wordAtempt--;
+   } while (wordAtempt > 0);
    console.log(`La palabra ingresada es ${word.green}!`);
+
    readline.close();
 });
