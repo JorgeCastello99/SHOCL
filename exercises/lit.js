@@ -170,14 +170,14 @@ const readline = require('readline').createInterface({
 });
 
 // Tu código empieza aquí
-
+let wordAtempt = 6;
 readline.question('Palabra: ', word => {
-   let wordAtempt = 6;
-
-   do {
+   if (wordAtempt > 0) {
+      console.log(`La palabra ingresada es ${word.green}!`);
       wordAtempt--;
-   } while (wordAtempt > 0);
-   console.log(`La palabra ingresada es ${word.green}!`);
+   } else {
+      console.log('has alcanzado el limite de intentos');
+   }
 
    readline.close();
 });
