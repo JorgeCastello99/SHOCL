@@ -169,8 +169,15 @@ const readline = require('readline').createInterface({
    output: process.stdout,
 });
 
+function checkWork(userWord) {
+   if (userWord === WORD) {
+      return true;
+   }
+   return false;
+}
 // Tu código empieza aquí
 readline.question('Palabra: ', word => {
-   console.log(`La palabra ingresada es ${word.green}!`);
+   // Console.log(`La palabra ingresada es ${word.green}!`);
+   checkWork(word);
    readline.close();
 });
