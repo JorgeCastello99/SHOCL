@@ -160,7 +160,7 @@ const WORDS = [
    'oren',
    'ores',
    'orno',
-   'orzo',
+   'orzo'
 ]; // eslint-disable-line no-use-before-define
 const WORD_SIZE = 4;
 const colors = require('colors');
@@ -170,6 +170,16 @@ const readline = require('readline').createInterface({
 });
 
 // Tu código empieza aquí
+function randomIntBetween(min, max) {
+   min = Math.ceil(min);
+   max = Math.floor(max);
+   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+function randomWord() {
+   return WORDS[randomIntBetween(0, WORDS.length - 1)];
+}
+console.log(randomWord());
+
 readline.question('Palabra: ', word => {
    console.log(`La palabra ingresada es ${word.green}!`);
    readline.close();
