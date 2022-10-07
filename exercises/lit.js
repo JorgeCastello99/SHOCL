@@ -198,6 +198,74 @@ function compareLetters(word, randomWord) {
 
    return [green, yellow];
 }
+/*
+ * Function asdasd(word, randomWord) {
+ *    const green = [];
+ *    const yellow = [];
+ */
+
+/*
+ *    For (let i = 0; i < WORD_SIZE; i++) {
+ *       if (randomWord.includes(word[i])) {
+ *          if (i === randomWord.indexOf(word[i])) {
+ *             green.push(i);
+ *          } else {
+ *             yellow.push(i);
+ *          }
+ *       }
+ *    }
+ *    for (let i = 0; i < yellow.length; i++) {
+ *       if (green.includes(yellow[i])) {
+ *          yellow[i].splice(i, 1);
+ *       }
+ *    }
+ *    console.log(green, yellow);
+ *    return [green, yellow];
+ * }
+ */
+
+/*
+ * Function compareLetters2(word, randomWord) {
+ *    const green = [];
+ *    const yellow = [];
+ *    for (let i = 0; i < WORD_SIZE; i++) {
+ *       if (randomWord[i] === word[i]) {
+ *          green.push(i);
+ *       }
+ *    }
+ *    for (let i = 0; i < green.length; i++) {
+ *       randomWord = randomWord
+ *          .split('')
+ *          .splice(green[i], 1)
+ *          .join('');
+ *       console.log(randomWord);
+ *    }
+ */
+
+/*
+ *    For (let i = 0; i < word.length; i++) {
+ *       if (randomWord.includes(word[i])) {
+ *          yellow.push(i);
+ *          randomWord.replace(word[i], '');
+ *       }
+ *    }
+ */
+
+/*
+ *    For (let i = 0; i < yellow.length; i++) {
+ *       randomWord = randomWord
+ *          .split('')
+ *          .splice(yellow[i], 1)
+ *          .join('');
+ *       console.log(randomWord);
+ *    }
+ */
+
+/*
+ *    Console.log(randomWord);
+ *    return [green, yellow];
+ * }
+ */
 
 function printWord(greenIndex, yellowIndex, word) {
    let letra = '';
@@ -234,7 +302,7 @@ const recursiveAsyncReadLine = function() {
          return readline.close();
       }
       intentos++;
-      if (intentos == 6) return readline.close();
+      if (intentos === 6) return readline.close();
       console.log(`Has introducido ${word}`);
       recursiveAsyncReadLine();
    });
