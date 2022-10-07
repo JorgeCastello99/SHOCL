@@ -160,13 +160,13 @@ const WORDS = [
    'oren',
    'ores',
    'orno',
-   'orzo'
+   'orzo',
 ]; // eslint-disable-line no-use-before-define
 const WORD_SIZE = 4;
 const colors = require('colors');
 const readline = require('readline').createInterface({
    input: process.stdin,
-   output: process.stdout,
+   output: process.stdout
 });
 
 // Tu código empieza aquí
@@ -175,12 +175,58 @@ function randomIntBetween(min, max) {
    max = Math.floor(max);
    return Math.floor(Math.random() * (max - min + 1) + min);
 }
-function randomWord() {
+function generateRandomWord() {
    return WORDS[randomIntBetween(0, WORDS.length - 1)];
 }
-console.log(randomWord());
 
-readline.question('Palabra: ', word => {
-   console.log(`La palabra ingresada es ${word.green}!`);
-   readline.close();
-});
+function compareLetters(word, randomWord) {
+   const green = [];
+   const yellow = [];
+   for (let i = 0; i < WORD_SIZE; i++) {
+      for (let j = 0; j < WORD_SIZE; j++) {
+         if (word[i] === randomWord[j]) {
+            if (i === j) {
+               green.push(i);
+               randomWord.slice(i, i + 1);
+            } else {
+               yellow.push(i);
+               randomWord.slice(i, i + 1);
+            }
+         }
+      }
+   }
+
+   return [green, yellow];
+}
+
+function printWord(greenIndex, yellowIndex, word) {
+   let letra = '';
+   for (let i = 0; i < word.length; i++) {
+      if (greenIndex.includes(i)) {
+         letra += word[i].green;
+      } else if (yellowIndex.includes(i)) {
+         letra += word[i].yellow;
+      } else {
+         letra += word[i];
+      }
+   }
+   return letra;
+}
+
+const randomWord = generateRandomWord();
+
+console.log(randomWord);
+let intentos = 0;
+const recursiveAsyncReadLine = function() {
+   readline.question(`Palabra de 4 letras (intento: ${intentos + 1}): `, function(word) {
+      const [greenIndex, yellowIndex] = compareLetters(word, randomWord);
+      const wordColoured = printWord(greenIndex, yellowIndex, word);
+      console.log(wordColoured);
+      intentos++;
+      if (intentos == 6) return readline.close();
+      console.log(`Has introducido ${word}`);
+      recursiveAsyncReadLine();
+   });
+};
+
+recursiveAsyncReadLine();
